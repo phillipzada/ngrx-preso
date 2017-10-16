@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-xs-12">
+    <app-tic (tic)="tic()" [disabled]="loading"></app-tic>
+  </div>
+</div>
+<div class="row" style="padding-top:20px">
+  <div class="col-xs-12">
+    <app-toc [tocs]="tocs$ | async" [latest]="latest$ | async"></app-toc>
+  </div>
+</div>

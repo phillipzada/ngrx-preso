@@ -1,0 +1,10 @@
+<h3>Console Output</h3>
+
+<div>
+  <pre>
+    <code class="">
+<ng-container *ngFor="let entry of (logs$ | async)">{{entry.time | amDateFormat:'HH:mm:ss:SSS'}}   {{entry.message}}
+</ng-container>
+    </code>
+</pre>
+</div>
