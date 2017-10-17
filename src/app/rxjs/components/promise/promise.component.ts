@@ -11,65 +11,62 @@ export class PromiseComponent implements OnInit {
 
   constructor(private logger: LoggerService) { }
 
-  code = `this.logger.log('Sync code - Started');
+  code = `this.log('Sync - Started');
 
 const promise = new Promise((resolve, reject) => {
-  this.logger.log('Async code - Started');
+  this.log('Async - Started');
 
   setTimeout(() => {
-    this.logger.log('Async code - Timeout Fired 1');
+    this.log('Async - Timeout 1');
     resolve(21);
   }, 1000);
 
   setTimeout(() => {
-    this.logger.log('Async code - Timeout Fired 2');
+    this.log('Async - Timeout 2');
     resolve(42);
   }, 3000);
 });
 
 promise
-  .then((value) => {
-    this.logger.log('Async code Handled, Returned: ' + value);
-  })
-  .catch((err) => {
-    this.logger.log('Async code - Error: ' + err);
-  });
+  .then((val) => this.log('Async - Returned: ' + val))
+  .catch((err) => this.log('Async - Error: ' + err));
 
-this.logger.log('Sync code - Finished');`;
+this.log('Sync - Finished');`;
 
 
   ngOnInit() {
     this.logger.clear();
   }
 
+  log(msg) {
+    this.logger.log(msg);
+  }
+
   run() {
     this.logger.clear();
 
-    this.logger.log('Sync code - Started');
+    this.log('Sync - Started');
 
     const promise = new Promise((resolve, reject) => {
-      this.logger.log('Async code - Started');
+      this.log('Async - Started');
 
       setTimeout(() => {
-        this.logger.log('Async code - Timeout Fired 1');
+        this.log('Async - Timeout 1');
         resolve(21);
       }, 1000);
 
       setTimeout(() => {
-        this.logger.log('Async code - Timeout Fired 2');
+        this.log('Async - Timeout 2');
         resolve(42);
       }, 3000);
+
     });
 
     promise
-      .then((value) => {
-        this.logger.log('Async code Handled, Returned: ' + value);
-      })
-      .catch((err) => {
-        this.logger.log('Async code - Error: ' + err);
-      });
+      .then((val) => this.log('Async - Returned: ' + val))
+      .catch((err) => this.log('Async - Error: ' + err));
 
-    this.logger.log('Sync code - Finished');
+    this.log('Sync - Finished');
 
   }
 

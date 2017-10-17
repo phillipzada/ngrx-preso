@@ -1,10 +1,11 @@
 import { Toc } from '../../shared/toc.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-toc',
   templateUrl: './toc.component.html',
-  styleUrls: []
+  styleUrls: [],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TocComponent implements OnInit {
 

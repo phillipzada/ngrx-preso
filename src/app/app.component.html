@@ -1,19 +1,48 @@
-<div class="container">
-    <h1>Powering Up Angular with NGRX</h1>
-    <nav>
-      <a routerLink="/rxjs" routerLinkActive="active">RxJS</a> | 
-      <a routerLink="/redux" routerLinkActive="active">Redux</a> | 
-      <a routerLink="/ngrx" routerLinkActive="active">NGRX</a>
-    </nav>
-    
-    <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <router-outlet></router-outlet>
-      </div>
-      <div class="col-sm-12 col-md-6">
-        <br/>
-        <app-logger></app-logger>
-      </div>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        Powering Up Angular with NGRX
+      </a>
     </div>
-    
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+          <a routerLink="/rxjs">RxJS</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/redux">Redux</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/ngrx">NGRX</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="http://www.zware.com.au" style="padding-top: 0; padding-bottom: 0">
+            <img src="/assets/logo.png" style="max-height: 50px">
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <br/>
+      <app-logger></app-logger>
+    </div>
+  </div>
+
 </div>

@@ -1,13 +1,14 @@
-<div class="row">
-  <div class="col-xs-12">
-    <h3>Tic Toc</h3>
+<div class="wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Tic Toc</h3>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <button type="button" class="btn btn-primary" [disabled]="disabled"
-      (click)="tic.emit()">
-      <i class="fa fa-bell-o"></i> Tic
-    </button>
+  <div class="row">
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-primary" [disabled]="disabled" (click)="tic.emit()">
+        <i class="fa fa-bell-o"></i> Tic
+      </button>
+    </div>
   </div>
 </div>

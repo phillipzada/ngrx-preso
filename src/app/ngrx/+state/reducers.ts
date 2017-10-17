@@ -23,7 +23,7 @@ export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
     return function (state: State, action: any): State {
 
         if (action.type === actions.TIC || action.type === actions.TOC) {
-            window.logService.log(action.type + ' > ' + JSON.stringify(action.payload));
+            window.logService.log(action.type + ' | ' + JSON.stringify(action.payload));
         }
 
         return reducer(state, action);

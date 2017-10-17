@@ -1,10 +1,9 @@
-<div class="row">
+<div class="row" [ngClass]="{'highlight': showBorder}">
+  <div class="col-xs-12 text-right">
+    <button type="button" class="btn btn-xs btn-default" (click)="toggleBorder()">Toggle Border</button>
+  </div>
   <div class="col-xs-12">
     <app-tic (tic)="tic()" [disabled]="loading"></app-tic>
-  </div>
-</div>
-<div class="row" style="padding-top:20px">
-  <div class="col-xs-12">
     <app-toc [tocs]="tocs$ | async" [latest]="latest$ | async"></app-toc>
   </div>
 </div>

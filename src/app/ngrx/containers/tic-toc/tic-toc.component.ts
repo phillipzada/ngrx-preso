@@ -19,22 +19,28 @@ export class TicTocComponent implements OnInit {
   loading = false;
   tocs$: Observable<Toc[]>;
   latest$: Observable<Toc>;
+  showBorder = false;
 
   private timer;
   constructor(private store: Store<State>, private logger: LoggerService) { }
 
   ngOnInit() {
+    this.logger.clear();
+
     this.tocs$ = this.store.select(selectors.selectTocArray);
     this.latest$ = this.store.select(selectors.selectLatestToc);
     this.store.select(selectors.selectLoading).subscribe(loading => this.loading = loading);
 
-    this.logger.clear();
     // this.timer = Observable.timer(0, 1000).subscribe(() => this.tic());
   }
 
   tic() {
     this.store.dispatch(new actions.TicAction());
 
+  }
+
+  toggleBorder() {
+    this.showBorder = !this.showBorder;
   }
 
 }
